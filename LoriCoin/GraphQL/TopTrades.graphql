@@ -1,0 +1,28 @@
+query GetTopTrades($baseCurrency: String!, $desc: [String!]) {
+  ethereum(network: bsc) {
+    dexTrades(
+      options: {limit: 20, desc: $desc }
+      any: [{baseCurrency: {is: $baseCurrency }, quoteCurrency: {is: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"}}]
+    ) {
+      transaction {
+        hash
+      }
+      tradeIndex
+      date {
+        date
+      }
+      buyAmount
+      buyAmountInUsd: buyAmount(in: USD)
+      buyCurrency {
+        symbol
+      }
+      sellAmount
+      sellCurrency {
+        symbol
+      }
+      sellAmountInUsd: sellAmount(in: USD)
+      tradeAmount(in: USD)
+    }
+  }
+}
+

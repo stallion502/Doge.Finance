@@ -1,0 +1,15 @@
+    query DevWallet($address: [String!]) {
+      ethereum(network: bsc) {
+        transfers(options: {asc: "date.date", limit: 1}, currency: {in: $address}) {
+          date {
+            date: date
+          }
+          sender {
+            address
+          }
+          receiver {
+            address
+          }
+        }
+      }
+    }

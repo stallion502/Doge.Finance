@@ -1,0 +1,17 @@
+query WalletBalance($address: String!) {
+  ethereum(network: bsc) {
+    address(address: {in: [$address]}) {
+      address
+      balances {
+        value
+        currency {
+          address
+          name
+          symbol
+          decimals
+        }
+      }
+    }
+  }
+}
+

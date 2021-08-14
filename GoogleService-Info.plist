@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>383113985950-a3ck6ete1a2hgge9l0bvbq5qeo7suknl.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.383113985950-a3ck6ete1a2hgge9l0bvbq5qeo7suknl</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCFr1jwa5L8VBZs2kYDmJci3f9_XMGCsn4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>383113985950</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Doge.Finance.En</string>
+	<key>PROJECT_ID</key>
+	<string>dogefinance-dd6c8</string>
+	<key>STORAGE_BUCKET</key>
+	<string>dogefinance-dd6c8.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:383113985950:ios:d6159c266f068e5dbde08f</string>
+</dict>
+</plist>

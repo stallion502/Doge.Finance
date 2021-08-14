@@ -1,0 +1,40 @@
+query WalletTransactions($adress: String!) {
+  ethereum(network: bsc) {
+    dexTrades(makerOrTaker: {is: $adress}) {
+      gasPrice
+      smartContract {
+        currency {
+          name
+          symbol
+        }
+      }
+      gasValue(in: USD)
+      exchange {
+        fullName
+      }
+      sellCurrency {
+        name
+        address
+        symbol
+      }
+      buyCurrency {
+        name
+        symbol
+        address
+      }
+      buyAmount(in: USD)
+      tradeIndex
+      transaction {
+        hash
+        to {
+          address
+        }
+        txFrom {
+          address
+        }
+      }
+      sellAmount(in: USD)
+    }
+  }
+}
+

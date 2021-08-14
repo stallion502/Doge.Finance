@@ -1,0 +1,16 @@
+query GetBNBBUSD($dates: [ISO8601DateTime!]!, $window: Int!) {
+  ethereum(network: bsc) {
+    dexTrades(
+      options: {desc: "timeInterval.minute"}
+      date: {in: $dates}
+      exchangeName: {in: ["Pancake", "Pancake v2"]}
+      baseCurrency: {is: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"}
+      quoteCurrency: {is: "0xe9e7cea3dedca5984780bafc599bd69add087d56"}
+    ) {
+      timeInterval {
+        minute(count: $window , format: "%Y-%m-%dT%H:%M:%SZ")
+      }
+      quotePrice
+    }
+  }
+}

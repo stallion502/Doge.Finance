@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="LoriCoin" customModuleProvider="target">
+            <connections>
+                <outlet property="activityIndicatorView" destination="X1O-bm-Xul" id="Nu1-Zc-O4B"/>
+                <outlet property="imageView" destination="vf2-wT-t3v" id="mNs-Ia-DEQ"/>
+                <outlet property="startTypingLabel" destination="9BR-C2-VKN" id="eRy-CO-Xyh"/>
+                <outlet property="tableView" destination="lKc-ZV-DSb" id="S6x-6A-lIB"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lKc-ZV-DSb">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" red="0.0078431372550000003" green="0.0039215686269999999" blue="0.0078431372550000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X1O-bm-Xul" customClass="MaterialActivityIndicatorView" customModule="MaterialActivityIndicator">
+                    <rect key="frame" x="187" y="433" width="40" height="40"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="ACj-ZB-ugj"/>
+                        <constraint firstAttribute="width" constant="40" id="FKD-Ur-dcA"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9BR-C2-VKN">
+                    <rect key="frame" x="16" y="537.5" width="382" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doge1" translatesAutoresizingMaskIntoConstraints="NO" id="vf2-wT-t3v">
+                    <rect key="frame" x="136.5" y="371.5" width="141" height="150"/>
+                </imageView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="9BR-C2-VKN" firstAttribute="top" secondItem="vf2-wT-t3v" secondAttribute="bottom" constant="16" id="1td-Tu-6yb"/>
+                <constraint firstItem="vf2-wT-t3v" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="EhO-t0-Ljh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="lKc-ZV-DSb" secondAttribute="bottom" id="SeF-K2-haM"/>
+                <constraint firstItem="X1O-bm-Xul" firstAttribute="centerY" secondItem="lKc-ZV-DSb" secondAttribute="centerY" id="ZMW-Q8-f1R"/>
+                <constraint firstItem="9BR-C2-VKN" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hju-5U-5Ar"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lKc-ZV-DSb" secondAttribute="trailing" id="i4s-ir-gHs"/>
+                <constraint firstItem="lKc-ZV-DSb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lQa-mT-Qdn"/>
+                <constraint firstItem="X1O-bm-Xul" firstAttribute="centerX" secondItem="lKc-ZV-DSb" secondAttribute="centerX" id="nFr-Et-4hG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9BR-C2-VKN" secondAttribute="trailing" constant="16" id="qRs-Zj-TsG"/>
+                <constraint firstItem="9BR-C2-VKN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="sFn-tV-32p"/>
+                <constraint firstItem="lKc-ZV-DSb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="tGV-Vv-5IW"/>
+                <constraint firstItem="9BR-C2-VKN" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="100" id="vTF-w6-g0L"/>
+            </constraints>
+            <point key="canvasLocation" x="-14.492753623188406" y="79.6875"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="X1O-bm-Xul">
+            <size key="intrinsicContentSize" width="24" height="24"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="doge1" width="141" height="150"/>
+    </resources>
+</document>

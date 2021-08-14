@@ -1,0 +1,29 @@
+query GetLatestPrice($baseCurrency: String!, $quoteCurrency: String!) {
+  ethereum(network: bsc) {
+    dexTrades(
+      options: {desc: ["block.height", "tradeIndex"], limit: 1}
+      exchangeName: {in: ["Pancake", "Pancake v2"]}
+      baseCurrency: {is: $baseCurrency}
+      quoteCurrency: {is: $quoteCurrency}
+    ) {
+      transaction {
+        hash
+      }
+      tradeIndex
+      tradeIndex
+      block {
+        height
+      }
+      baseCurrency {
+        symbol
+        address
+      }
+      quoteCurrency {
+        symbol
+        address
+      }
+      quotePrice
+    }
+  }
+}
+

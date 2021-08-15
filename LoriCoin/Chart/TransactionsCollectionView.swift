@@ -53,8 +53,8 @@ class TransactionsCollectionView: UICollectionView {
     }
 
     private var offset: Int = 0
-    private var size: Int = 40
-    private let height: CGFloat = 165
+    private var txSize: Int = 40
+    private let txHeight: CGFloat = 165
     private var newTransactions: [TransactionAPI] = []
 
     var transactions: [TransactionAPI] = [] {

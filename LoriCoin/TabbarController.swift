@@ -16,12 +16,13 @@ class TabbarController: UITabBarController {
             mainViewController(),
             chartsViewController(),
             favoritesViewController(),
-            walletCheckerController(),
+            dexTradesController(),
+            walletController(),
         ]
 
         tabBar.barTintColor = .mainBackgorund
         tabBar.tintColor = .white
-    }
+    } 
 
     private func mainViewController() -> UIViewController {
         let controller = MainPageController()
@@ -90,6 +91,19 @@ class TabbarController: UITabBarController {
             title: "Checker",
             image: UIImage(named: "wallet"),
             selectedImage: UIImage(named: "wallet")
+        )
+        let navigationController = UINavigationController(rootViewController: controller)
+        navigationController.navigationBar.barTintColor = .mainBackgorund
+        navigationController.navigationBar.tintColor = .white
+        return navigationController
+    }
+
+    private func dexTradesController() -> UIViewController {
+        let controller = DexTradesController()
+        controller.tabBarItem = UITabBarItem(
+            title: "Dex Trades",
+            image: UIImage(named: "dex"),
+            selectedImage: UIImage(named: "dex")
         )
         let navigationController = UINavigationController(rootViewController: controller)
         navigationController.navigationBar.barTintColor = .mainBackgorund

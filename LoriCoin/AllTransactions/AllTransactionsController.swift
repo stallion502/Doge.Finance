@@ -119,7 +119,7 @@ class AllTransactionsController: UIViewController {
         transactionsLoader.startAnimating()
         let date = endDate ?? Date()
 
-        NetworkManager.shared.transactions(
+        BaseNetworkManager.shared.transactions(
             address: address,
             limit: transactionsSize,
             from: date.string(.isoFull, timeZone: .utc))
@@ -152,7 +152,7 @@ class AllTransactionsController: UIViewController {
         isLoading = true
         transactionsLoader.color = .white
 
-        NetworkManager.shared.transactions(
+        BaseNetworkManager.shared.transactions(
             address: address,
             limit: transactionsSize,
             from: transactionsCollectionView.transactions.last?.transactionDate ?? "")

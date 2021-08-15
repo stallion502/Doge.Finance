@@ -92,7 +92,7 @@ class ChartStartController: UIViewController {
     private func loadData() {
         addresses.forEach { address in
 
-            NetworkManager.shared.tokenInfo(address: address) { [weak self] result in
+            BaseNetworkManager.shared.tokenInfo(address: address) { [weak self] result in
                 switch result {
                 case .success(let info):
                     self?.tokens[address] = info

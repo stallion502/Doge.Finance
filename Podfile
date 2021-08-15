@@ -6,15 +6,11 @@ target 'LoriCoin' do
   use_frameworks!
   pod 'Apollo'
 
-  pod 'RxSwift'
-
   pod 'Charts'
 
   pod 'Firebase/Database'
 
   pod 'MaterialActivityIndicator'
-
-  pod 'AlamofireImage'
 
   pod 'SDWebImage'
 
@@ -33,5 +29,8 @@ target 'LoriCoin' do
   pod 'Firebase/Analytics'
 
   pod 'YandexMobileMetrica', '3.12.0'
+
+  # Etrherium Kit
+  pod 'EthereumKit.swift'
 
 end

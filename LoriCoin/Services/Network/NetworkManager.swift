@@ -43,8 +43,8 @@ enum NetworkError: Error {
 }
 
 
-final class NetworkManager {
-    static let shared = NetworkManager()
+final class BaseNetworkManager {
+    static let shared = BaseNetworkManager()
 
     private let baseURL = "http://81.23.151.224:5101/api"
 

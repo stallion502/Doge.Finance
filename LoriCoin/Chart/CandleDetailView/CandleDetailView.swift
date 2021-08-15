@@ -68,7 +68,7 @@ class CandleDetailView: UIView {
             .date(from: trade?.timeInterval?.minute ?? "")
         let dif = chartRange.rawValue * 60
 
-        NetworkManager.shared.transactions(
+        BaseNetworkManager.shared.transactions(
             address: address,
             limit: transactionsSize,
             from: timeFrom
@@ -109,7 +109,7 @@ class CandleDetailView: UIView {
         isLoading = true
         print("date \(timeFrom)")
         let dif = chartRange.rawValue * 60
-        NetworkManager.shared.transactions(
+        BaseNetworkManager.shared.transactions(
             address: address,
             limit: transactionsSize,
             from: timeFrom

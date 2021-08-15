@@ -106,7 +106,7 @@ final class MainPageController: UIViewController {
     private func loadData() {
         tokens.removeAll()
         configureSections()
-        NetworkManager.shared.tokenTopRaiting(rating: rating) { [weak self] result in
+        BaseNetworkManager.shared.tokenTopRaiting(rating: rating) { [weak self] result in
             switch result {
             case .success(let tokens):
                 self?.tokens = tokens

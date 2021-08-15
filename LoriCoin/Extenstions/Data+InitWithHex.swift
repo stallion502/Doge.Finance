@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import CryptoSwift
+import EthereumKit
 
 // MARK: - Hex String to Data conversion
 public extension Data {
@@ -21,19 +21,20 @@ public extension Data {
         // if ethHex is not full byte, Data(hex:) adds nibble at the end, but we need it in the beginning
         let paddingToByte = value.count % 2 == 1 ? "0" : ""
         value = paddingToByte + value
-        self.init(hex: value)
+        let data: EthereumKit.Data = Data(hex: value)
+        self = data
     }
 
-    init?(exactlyHex hex: String) {
-        var value = hex.lowercased()
-        if value.hasPrefix("0x") {
-            value.removeFirst(2)
-        }
-        guard value.rangeOfCharacter(from: CharacterSet.hexadecimals.inverted) == nil else {
-            return nil
-        }
-        self.init(hex: hex)
-    }
+//    init?(exactlyHex hex: String) {
+//        var value = hex.lowercased()
+//        if value.hasPrefix("0x") {
+//            value.removeFirst(2)
+//        }
+//        guard value.rangeOfCharacter(from: CharacterSet.hexadecimals.inverted) == nil else {
+//            return nil
+//        }
+//        self.init(hex: hex)
+//    }
 
     func toHexStringWithPrefix() -> String {
         "0x" + toHexString()

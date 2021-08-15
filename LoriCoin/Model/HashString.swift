@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import EthereumKit
 
 struct HashString: Hashable, Codable {
     let hash: Data
@@ -19,7 +20,7 @@ struct HashString: Hashable, Codable {
     }
 
     init(hex: String) throws {
-        let data = Data(hex: hex)
+        let data: EthereumKit.Data = Data(hex: hex)
         guard data.count == 32 else { throw HashStringError.wrongHashLength }
         self.hash = data
     }

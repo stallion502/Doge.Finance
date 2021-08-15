@@ -234,7 +234,7 @@ class ChartController: UIViewController {
                 self?.updatePrice(newInfo: tokenInfo)
             }, transactionSubscriber: onNewTransaction)
 
-        NetworkManager.shared.tokenInfo(address: address) {
+        BaseNetworkManager.shared.tokenInfo(address: address) {
             [weak self] result in
             switch result {
             case .success(let info):
@@ -363,7 +363,7 @@ class ChartController: UIViewController {
         transactionsLoader.color = .white
         transactionsLoader.startAnimating()
 
-        NetworkManager.shared.transactions(
+        BaseNetworkManager.shared.transactions(
             address: address,
             limit: transactionsLimit,
             from: Date().string(.isoFull, timeZone: .utc))

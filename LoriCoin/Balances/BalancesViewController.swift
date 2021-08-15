@@ -46,6 +46,7 @@ class BalancesViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationItem.titleView = NetworkView()
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "logout"), style: .plain, target: self, action: #selector(logout))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "wallet"), style: .plain, target: self, action: #selector(walletCheckerPressed))
     }
 
     override func viewDidLoad() {
@@ -59,6 +60,12 @@ class BalancesViewController: UIViewController {
         tableView.register(UINib(nibName: "BalanceTokenCell", bundle: .main), forCellReuseIdentifier: "BalanceTokenCell")
         tableView.register(UINib(nibName: "BalanceHeaderTableViewCell", bundle: .main), forCellReuseIdentifier: "BalanceHeaderTableViewCell")
         loadBalances()
+    }
+
+
+    @objc private func walletCheckerPressed() {
+        let controller = WalletCheckerController()
+        navigationController?.pushViewController(controller, animated: true)
     }
 
     @objc private func logout() {
@@ -82,7 +89,7 @@ class BalancesViewController: UIViewController {
                 self?.balances[address.uppercased()] = value?.toDouble()
             }
 
-            NetworkManager.shared.tokenInfo(address: address) { [weak self] result in
+            BaseNetworkManager.shared.tokenInfo(address: address) { [weak self] result in
                 switch result {
                 case .success(let info):
                     self?.tokens.append(info)

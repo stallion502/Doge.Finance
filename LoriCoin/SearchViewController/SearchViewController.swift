@@ -100,7 +100,7 @@ class SearchViewController: UIViewController {
         tableView.reloadData()
         print("search start")
 //        activityIndicatorView.startAnimating()
-        NetworkManager.shared.tokenSearch(filter: searchQuery, take: size, skip: offset) { [weak self] result in
+        BaseNetworkManager.shared.tokenSearch(filter: searchQuery, take: size, skip: offset) { [weak self] result in
             self?.activityIndicatorView.stopAnimating()
             switch result {
             case .success(let searches):
@@ -154,7 +154,7 @@ class SearchViewController: UIViewController {
         guard !searchQuery.isEmpty && !isLoading && !allLoaded else { return }
         isLoading = true
         print("search load more")
-        NetworkManager.shared.tokenSearch(filter: searchQuery, take: 5, skip: offset) { [weak self] result in
+        BaseNetworkManager.shared.tokenSearch(filter: searchQuery, take: 5, skip: offset) { [weak self] result in
             switch result {
             case .success(let searches):
                 self?.searchResults.append(contentsOf: searches)
